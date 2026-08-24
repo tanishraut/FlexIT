@@ -16,14 +16,32 @@ const navLinks =
 
 if (menuBtn && navLinks) {
 
+    function setMenuState(isOpen) {
+        if (isOpen) {
+            navLinks.classList.add("active");
+            navLinks.classList.add("nav-open");
+            menuBtn.classList.add("active");
+            menuBtn.setAttribute("aria-expanded", "true");
+            menuBtn.setAttribute("aria-label", "Close Menu");
+            menuBtn.innerHTML = "✕";
+        } else {
+            navLinks.classList.remove("active");
+            navLinks.classList.remove("nav-open");
+            menuBtn.classList.remove("active");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Open Menu");
+            menuBtn.innerHTML = "☰";
+        }
+    }
+
     menuBtn.addEventListener(
         "click",
-        function () {
-
-            navLinks.classList.toggle(
-                "nav-open"
-            );
-
+        function (event) {
+            event.stopPropagation();
+            const isOpen =
+                navLinks.classList.contains("active") ||
+                navLinks.classList.contains("nav-open");
+            setMenuState(!isOpen);
         }
     );
 
@@ -37,15 +55,55 @@ if (menuBtn && navLinks) {
             link.addEventListener(
                 "click",
                 function () {
-
-                    navLinks.classList.remove(
-                        "nav-open"
-                    );
-
+                    setMenuState(false);
                 }
             );
 
         });
+
+
+    /* Close menu when clicking outside */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+            const isOpen =
+                navLinks.classList.contains("active") ||
+                navLinks.classList.contains("nav-open");
+
+            if (
+                isOpen &&
+                !navLinks.contains(event.target) &&
+                !menuBtn.contains(event.target)
+            ) {
+                setMenuState(false);
+            }
+        }
+    );
+
+
+    /* Close menu on Escape key */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+            if (event.key === "Escape") {
+                setMenuState(false);
+            }
+        }
+    );
+
+
+    /* Close menu when resizing to desktop */
+
+    window.addEventListener(
+        "resize",
+        function () {
+            if (window.innerWidth > 768) {
+                setMenuState(false);
+            }
+        }
+    );
 
 }
 
