@@ -1,0 +1,433 @@
+/* =====================================================
+   SUPPORT
+   IMPORTANT:
+   FULL WIDTH BACKGROUND
+===================================================== */
+
+.support {
+
+    position: relative;
+
+    overflow: hidden;
+
+    /* FULL BROWSER WIDTH */
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    /*
+       Full-width cream background.
+       This fixes the white spaces visible
+       on both sides of the support banner.
+    */
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3e0 0%,
+            #fff8f1 45%,
+            #ffffff 100%
+        );
+
+    padding:
+        110px 0;
+}
+
+
+/* =====================================================
+   SUPPORT WRAPPER
+   CONTENT REMAINS CENTERED
+===================================================== */
+
+.support-wrapper {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1200px, 92%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* =====================================================
+   SUPPORT CONTENT
+===================================================== */
+
+.support-content p {
+
+    max-width: 500px;
+
+    margin-top: 22px;
+
+    color: var(--gray);
+
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   SUPPORT FEATURES
+===================================================== */
+
+.support-features {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 14px;
+
+    margin-top: 30px;
+}
+
+.support-features div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 12px;
+
+    font-weight: 750;
+}
+
+.support-features span {
+
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: var(--orange);
+
+    box-shadow:
+        0 5px 15px rgba(26,31,46,0.08);
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   SUPPORT DECORATION
+===================================================== */
+
+.support-decoration {
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -150px;
+    top: -150px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,122,0,0.12);
+
+    pointer-events: none;
+}
+
+.support-decoration span {
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+}
+
+.support-decoration span:nth-child(1) {
+
+    top: 30%;
+    left: 15%;
+}
+
+.support-decoration span:nth-child(2) {
+
+    top: 60%;
+    left: 35%;
+
+    background: var(--pink);
+}
+
+.support-decoration span:nth-child(3) {
+
+    top: 20%;
+    right: 20%;
+
+    background: var(--yellow);
+}
+
+.support-decoration span:nth-child(4) {
+
+    bottom: 15%;
+    right: 30%;
+
+    background: var(--pink);
+}
+
+
+/* =====================================================
+   SUPPORT FORM
+===================================================== */
+
+.support-form {
+
+    width: 100%;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.96);
+
+    border:
+        1px solid rgba(26,31,46,0.08);
+
+    box-shadow:
+        0 25px 60px rgba(26,31,46,0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =====================================================
+   FORM HEADER
+===================================================== */
+
+.form-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.form-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-weight: 900;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--pink)
+        );
+
+    flex-shrink: 0;
+}
+
+.form-header span {
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.15em;
+
+    color: var(--orange);
+}
+
+.form-header h3 {
+
+    margin-top: 4px;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   FORM ROW
+===================================================== */
+
+.form-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+
+    margin-bottom: 17px;
+}
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    color: var(--navy);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+    width: 100%;
+
+    border:
+        1px solid rgba(26,31,46,0.10);
+
+    border-radius: 10px;
+
+    background: #fafbfc;
+
+    padding: 12px 13px;
+
+    outline: none;
+
+    color: var(--navy);
+
+    font-size: 12px;
+
+    transition: 0.2s ease;
+}
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: var(--orange);
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(255,122,0,0.08);
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-btn {
+
+    width: 100%;
+
+    min-height: 50px;
+
+    border: 0;
+
+    border-radius: 11px;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--pink)
+        );
+
+    transition: 0.25s ease;
+}
+
+.submit-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(255,61,127,0.18);
+}
+
+.submit-btn span {
+
+    margin-left: 10px;
+}
+
+
+/* =====================================================
+   FORM MESSAGE
+===================================================== */
+
+.form-message {
+
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    background: #ecfff2;
+
+    color: #218844;
+
+    font-size: 12px;
+
+    text-align: center;
+}

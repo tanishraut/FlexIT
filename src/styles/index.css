@@ -1,0 +1,17 @@
+/* =====================================================
+   FLEXUS DESIGN SYSTEM & STYLESHEET MANIFEST
+===================================================== */
+
+@import "./variables.css";
+@import "./base.css";
+@import "./navbar.css";
+@import "./hero.css";
+@import "./services.css";
+@import "./pricing.css";
+@import "./about.css";
+@import "./process.css";
+@import "./support.css";
+@import "./cta.css";
+@import "./contact.css";
+@import "./footer.css";
+@import "./responsive.css";

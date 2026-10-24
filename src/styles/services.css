@@ -1,0 +1,146 @@
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.services {
+    background: white;
+}
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.service-card {
+    min-height: 310px;
+
+    padding: 27px;
+
+    position: relative;
+
+    border:
+        1px solid rgba(26,31,46,0.08);
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 30px rgba(26,31,46,0.04);
+
+    transition: 0.3s ease;
+}
+
+.service-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 25px 50px rgba(26,31,46,0.10);
+}
+
+.service-card-icon {
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 17px;
+
+    font-weight: 900;
+}
+
+.service-card-icon.orange {
+
+    color: var(--orange);
+
+    background:
+        rgba(255,122,0,0.12);
+}
+
+.service-card-icon.pink {
+
+    color: var(--pink);
+
+    background:
+        rgba(255,61,127,0.12);
+}
+
+.service-card-icon.yellow {
+
+    color: #d39400;
+
+    background:
+        rgba(255,193,7,0.18);
+}
+
+.service-card-icon.gradient {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--orange)
+        );
+}
+
+.service-number {
+
+    position: absolute;
+
+    top: 28px;
+    right: 28px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    color: #a8adba;
+}
+
+.service-card h3 {
+
+    margin-top: 27px;
+
+    font-size: 20px;
+
+    color: var(--navy);
+}
+
+.service-card p {
+
+    margin-top: 12px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+.service-card a {
+
+    position: absolute;
+
+    bottom: 27px;
+
+    color: var(--orange);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}

@@ -1,0 +1,953 @@
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 820px;
+
+    padding:
+        150px 0
+        90px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fffaf5 100%
+        );
+}
+
+
+/* =====================================================
+   HERO GRID
+===================================================== */
+
+.hero-grid {
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.45;
+
+    background-image:
+
+        linear-gradient(
+            rgba(26,31,46,0.035) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(26,31,46,0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
+}
+
+
+/* =====================================================
+   HERO GLOWS
+===================================================== */
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+.hero-glow-orange {
+    width: 330px;
+    height: 330px;
+
+    background:
+        rgba(255, 122, 0, 0.13);
+
+    top: 130px;
+    left: -120px;
+}
+
+.hero-glow-pink {
+    width: 350px;
+    height: 350px;
+
+    background:
+        rgba(255, 61, 127, 0.10);
+
+    right: -120px;
+    top: 250px;
+}
+
+.hero-glow-yellow {
+    width: 250px;
+    height: 250px;
+
+    background:
+        rgba(255, 193, 7, 0.12);
+
+    right: 35%;
+    bottom: -120px;
+}
+
+
+/* =====================================================
+   HERO DOTS
+===================================================== */
+
+.hero-dot {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    animation:
+        floatDot 5s ease-in-out infinite;
+}
+
+.dot-1 {
+    background: var(--orange);
+
+    top: 20%;
+    left: 8%;
+}
+
+.dot-2 {
+    background: var(--pink);
+
+    top: 40%;
+    right: 8%;
+
+    animation-delay: 1s;
+}
+
+.dot-3 {
+    background: var(--yellow);
+
+    bottom: 18%;
+    left: 45%;
+
+    animation-delay: 2s;
+}
+
+.dot-4 {
+    background: var(--orange);
+
+    top: 18%;
+    right: 40%;
+
+    animation-delay: 3s;
+}
+
+@keyframes floatDot {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =====================================================
+   HERO CONTAINER
+===================================================== */
+
+.hero-container {
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(480px, 0.9fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+    min-width: 0;
+}
+
+
+/* =====================================================
+   HERO BADGE
+===================================================== */
+
+.hero-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 14px;
+
+    border:
+        1px solid rgba(255, 122, 0, 0.18);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    box-shadow:
+        0 0 0 5px rgba(255,122,0,0.10);
+}
+
+
+/* =====================================================
+   HERO H1
+===================================================== */
+
+.hero h1 {
+    font-size:
+        clamp(48px, 5.3vw, 76px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 850;
+
+    color: var(--navy);
+}
+
+.orange-text {
+    color: var(--orange);
+}
+
+.gradient-text {
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            var(--orange),
+            var(--yellow)
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.hero-description {
+    max-width: 610px;
+
+    margin-top: 27px;
+
+    color: var(--gray);
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   HERO TAGS
+===================================================== */
+
+.hero-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 28px;
+
+    max-width: 680px;
+}
+
+.hero-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,0.9);
+
+    border:
+        1px solid rgba(26,31,46,0.08);
+
+    box-shadow:
+        0 8px 20px rgba(26,31,46,0.05);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: var(--navy);
+
+    white-space: nowrap;
+}
+
+.hero-tag b {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+}
+
+.tag-web b {
+    background:
+        rgba(255,122,0,0.12);
+
+    color: var(--orange);
+}
+
+.tag-ecommerce b {
+    background:
+        rgba(255,61,127,0.12);
+
+    color: var(--pink);
+}
+
+.tag-google b {
+    background:
+        rgba(255,193,7,0.18);
+
+    color: #d49600;
+}
+
+.tag-seo b {
+    background:
+        rgba(255,193,7,0.18);
+
+    color: #d49600;
+}
+
+.tag-marketing b {
+    background:
+        rgba(255,61,127,0.12);
+
+    color: var(--pink);
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 32px;
+}
+
+.hero-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 52px;
+
+    padding: 0 23px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    transition: 0.25s ease;
+}
+
+.hero-btn-primary {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--pink)
+        );
+
+    box-shadow:
+        0 15px 30px rgba(255,61,127,0.18);
+}
+
+.hero-btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.hero-btn-secondary {
+    border:
+        1px solid rgba(26,31,46,0.12);
+
+    background: white;
+}
+
+.hero-btn-secondary:hover {
+    border-color: var(--orange);
+
+    color: var(--orange);
+}
+
+
+/* =====================================================
+   HERO STATS
+===================================================== */
+
+.hero-stats {
+    display: flex;
+
+    gap: 0;
+
+    margin-top: 50px;
+}
+
+.hero-stat {
+    min-width: 125px;
+
+    padding-right: 28px;
+
+    margin-right: 28px;
+
+    border-right:
+        1px solid rgba(26,31,46,0.12);
+}
+
+.hero-stat:last-child {
+    border: 0;
+}
+
+.hero-stat strong {
+    display: block;
+
+    font-size: 23px;
+
+    color: var(--navy);
+}
+
+.hero-stat span {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 12px;
+
+    color: var(--gray);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+}
+
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+.hero-visual {
+    height: 560px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =====================================================
+   VISUAL CIRCLES
+===================================================== */
+
+.visual-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(26,31,46,0.08);
+}
+
+.circle-one {
+    width: 450px;
+    height: 450px;
+}
+
+.circle-two {
+    width: 350px;
+    height: 350px;
+
+    border-color:
+        rgba(255,122,0,0.13);
+}
+
+.circle-three {
+    width: 250px;
+    height: 250px;
+
+    border-color:
+        rgba(255,61,127,0.15);
+}
+
+
+/* =====================================================
+   VISUAL LABEL
+===================================================== */
+
+.visual-label {
+    position: absolute;
+
+    top: 15px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    box-shadow:
+        0 10px 30px rgba(26,31,46,0.07);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    color: var(--gray);
+
+    white-space: nowrap;
+}
+
+.visual-label span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+}
+
+
+/* =====================================================
+   HERO CENTER CARD
+===================================================== */
+
+.hero-center-card {
+    width: 250px;
+
+    min-height: 260px;
+
+    padding: 30px 20px;
+
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.94);
+
+    border:
+        1px solid rgba(26,31,46,0.09);
+
+    box-shadow:
+        0 30px 70px rgba(26,31,46,0.12);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* =====================================================
+   CENTER LOGO
+===================================================== */
+
+.center-logo-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+}
+
+.center-logo-img {
+    width: 76px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 8px 24px rgba(255, 122, 0, 0.35));
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
+}
+
+.center-logo-wrap:hover .center-logo-img {
+    transform: scale(1.1) translateY(-2px);
+    filter: drop-shadow(0 12px 28px rgba(255, 122, 0, 0.45));
+}
+
+.center-brand-wordmark {
+    color: var(--navy);
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.08em;
+}
+
+
+/* =====================================================
+   CENTER LINE
+===================================================== */
+
+.center-line {
+    width: 50px;
+    height: 2px;
+
+    margin: 12px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--pink)
+        );
+}
+
+
+/* =====================================================
+   CENTER TEXT
+===================================================== */
+
+.center-title {
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.12em;
+
+    color: var(--navy);
+}
+
+.center-subtitle {
+    margin-top: 8px;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    color: var(--gray);
+}
+
+
+/* =====================================================
+   GROWTH INDICATOR
+===================================================== */
+
+.growth-indicator {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    color: var(--gray);
+}
+
+.growth-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--orange);
+
+    box-shadow:
+        0 0 0 5px rgba(255,122,0,0.10);
+}
+
+
+/* =====================================================
+   FLOATING CARDS
+===================================================== */
+
+.floating-card {
+    position: absolute;
+
+    z-index: 10;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 210px;
+
+    padding: 13px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border:
+        1px solid rgba(26,31,46,0.08);
+
+    box-shadow:
+        0 18px 40px rgba(26,31,46,0.10);
+
+    animation:
+        floatingCard 5s ease-in-out infinite;
+}
+
+.floating-card strong {
+    display: block;
+
+    font-size: 11px;
+
+    color: var(--navy);
+}
+
+.floating-card small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+
+    color: var(--gray);
+}
+
+.floating-icon {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-weight: 900;
+}
+
+.floating-icon.orange {
+    color: var(--orange);
+
+    background:
+        rgba(255,122,0,0.12);
+}
+
+.floating-icon.pink {
+    color: var(--pink);
+
+    background:
+        rgba(255,61,127,0.12);
+}
+
+.floating-icon.yellow {
+    color: #d49400;
+
+    background:
+        rgba(255,193,7,0.18);
+}
+
+.floating-icon.gradient {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            var(--orange)
+        );
+}
+
+
+/* =====================================================
+   FLOATING CARD POSITIONS
+===================================================== */
+
+.floating-card-one {
+    left: 0;
+    top: 110px;
+}
+
+.floating-card-two {
+    right: -5px;
+    top: 165px;
+
+    animation-delay: 1s;
+}
+
+.floating-card-three {
+    left: 20px;
+    bottom: 105px;
+
+    animation-delay: 2s;
+}
+
+.floating-card-four {
+    right: -5px;
+    bottom: 70px;
+
+    animation-delay: 3s;
+}
+
+@keyframes floatingCard {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+
+/* =====================================================
+   VISUAL BOTTOM
+===================================================== */
+
+.visual-bottom {
+    position: absolute;
+
+    bottom: 15px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--gray);
+
+    white-space: nowrap;
+}
+
+.visual-bottom strong {
+    font-size: 19px;
+
+    color: var(--orange);
+}
+
+.visual-bottom span {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}

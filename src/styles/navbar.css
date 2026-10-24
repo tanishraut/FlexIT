@@ -1,0 +1,177 @@
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid rgba(26, 31, 46, 0.07);
+}
+
+.nav-container {
+    width: min(1200px, 92%);
+
+    min-height: 78px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    height: 42px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.08);
+}
+
+.logo-wordmark {
+    color: var(--navy);
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.07em;
+}
+
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 34px;
+
+    margin-left: auto;
+}
+
+.nav-links a {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--navy);
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+
+/* =====================================================
+   NAV CTA
+===================================================== */
+
+.nav-cta {
+    padding: 12px 20px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--orange),
+            var(--pink)
+        );
+
+    box-shadow:
+        0 10px 25px rgba(255, 61, 127, 0.18);
+
+    transition: 0.25s ease;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 30px rgba(255, 61, 127, 0.25);
+}
+
+
+/* =====================================================
+   MOBILE CTA BUTTON (HIDDEN ON DESKTOP)
+===================================================== */
+
+.mobile-cta-btn {
+    display: none;
+}
+
+
+/* =====================================================
+   MOBILE BUTTON
+===================================================== */
+
+.menu-btn {
+    display: none;
+
+    border: 0;
+
+    background: transparent;
+
+    font-size: 26px;
+
+    line-height: 1;
+
+    color: var(--navy);
+
+    cursor: pointer;
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-btn:hover,
+.menu-btn:active,
+.menu-btn.active {
+    color: var(--orange);
+    background: rgba(255, 122, 0, 0.08);
+}

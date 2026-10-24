@@ -1,0 +1,67 @@
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.process {
+
+    background: var(--light);
+
+    max-width: none;
+
+    width: 100%;
+
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.process-grid {
+
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+}
+
+.process-item {
+
+    padding: 30px;
+
+    border-left:
+        1px solid rgba(26,31,46,0.10);
+}
+
+.process-item:first-child {
+
+    border-left: 0;
+}
+
+.process-item > span {
+
+    color: var(--orange);
+
+    font-size: 12px;
+
+    font-weight: 900;
+}
+
+.process-item h3 {
+
+    margin-top: 20px;
+
+    font-size: 23px;
+}
+
+.process-item p {
+
+    margin-top: 10px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}

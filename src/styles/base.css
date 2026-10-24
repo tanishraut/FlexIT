@@ -1,0 +1,111 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #1a1f2e;
+    background: #fff;
+
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+.section {
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    padding:
+        110px 0;
+}
+
+.section-heading {
+    max-width: 700px;
+
+    margin:
+        0 auto 55px;
+
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.15em;
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-heading h2,
+.support-content h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(36px, 4vw, 55px);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.04em;
+
+    color: var(--navy);
+}
+
+.section-heading h2 span,
+.about-content h2 span,
+.contact-heading h2 span,
+.support-content h2 span {
+
+    color: var(--orange);
+}
+
+.section-heading p {
+
+    margin-top: 20px;
+
+    color: var(--gray);
+
+    line-height: 1.7;
+}
