@@ -110,11 +110,11 @@ img {
     flex-shrink: 0;
 }
 
-.logo img {
-    width: 190px;
-    height: auto;
-
-    object-fit: contain;
+.logo-wordmark {
+    color: var(--navy);
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: -0.07em;
 }
 
 
@@ -894,9 +894,11 @@ img {
     width: 170px;
 }
 
-.center-logo-wrap img {
-    width: 100%;
-    height: auto;
+.center-brand-wordmark {
+    color: var(--navy);
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -0.08em;
 }
 
 
@@ -2328,9 +2330,8 @@ img {
     padding-bottom: 55px;
 }
 
-.footer-logo img {
-
-    width: 175px;
+.footer-logo .logo-wordmark {
+    color: white;
 }
 
 .footer-brand p {
@@ -2436,9 +2437,8 @@ img {
         gap: 20px;
     }
 
-    .logo img {
-
-        width: 160px;
+    .logo-wordmark {
+        font-size: 24px;
     }
 
 
@@ -2538,9 +2538,8 @@ img {
         min-height: 68px;
     }
 
-    .logo img {
-
-        width: 145px;
+    .logo-wordmark {
+        font-size: 22px;
     }
 
     .nav-links {
@@ -3057,9 +3056,8 @@ img {
 
     /* LOGO */
 
-    .logo img {
-
-        width: 125px;
+    .logo-wordmark {
+        font-size: 20px;
     }
 
 
@@ -3243,5 +3241,159 @@ img {
     .support-form {
 
         padding: 15px;
+    }
+}
+
+
+/* =====================================================
+   AGENCY PACKAGES
+===================================================== */
+
+.pricing {
+    width: 100%;
+    max-width: none;
+    padding: 110px 4%;
+    background: var(--light);
+}
+
+.pricing-grid {
+    width: min(1200px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+.pricing-card {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(26, 31, 46, 0.09);
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 12px 35px rgba(26, 31, 46, 0.05);
+    transition: 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(26, 31, 46, 0.1);
+}
+
+.pricing-card-featured {
+    border-color: rgba(255, 122, 0, 0.45);
+    box-shadow: 0 18px 45px rgba(255, 122, 0, 0.12);
+}
+
+.pricing-plan-label {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+}
+
+.pricing-card h3 {
+    min-height: 54px;
+    margin-top: 15px;
+    color: var(--navy);
+    font-size: 22px;
+}
+
+.pricing-price {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.pricing-price strong {
+    color: var(--navy);
+    font-size: clamp(30px, 3vw, 40px);
+    letter-spacing: -0.04em;
+}
+
+.pricing-price span {
+    color: var(--gray);
+    font-size: 13px;
+}
+
+.pricing-reach {
+    margin-top: 8px;
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.pricing-card ul {
+    display: grid;
+    gap: 13px;
+    margin: 25px 0;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    list-style: none;
+}
+
+.pricing-card li {
+    position: relative;
+    padding-left: 23px;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.pricing-card li::before {
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    content: "✓";
+    font-weight: 900;
+}
+
+.pricing-commission {
+    margin-top: auto;
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.pricing-button {
+    margin-top: 20px;
+    padding: 13px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    background: linear-gradient(135deg, var(--orange), var(--pink));
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+    transition: 0.25s ease;
+}
+
+.pricing-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 61, 127, 0.2);
+}
+
+@media (max-width: 1050px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing {
+        padding: 75px 4%;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .pricing-card {
+        padding: 26px;
     }
 }
