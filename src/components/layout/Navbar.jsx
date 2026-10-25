@@ -19,6 +19,7 @@ export default function Navbar({ menuOpen, setMenuOpen }) {
         >
           <a href="#home">Home</a>
           <a href="#services">Services</a>
+          <a href="#work">Work</a>
           <a href="#pricing">Packages</a>
           <a href="#about">About</a>
           <a href="#support">Support</a>

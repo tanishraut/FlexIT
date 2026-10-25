@@ -27,6 +27,7 @@ export default function Footer() {
           <h4>Company</h4>
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#work">Our Work</a>
           <a href="#pricing">Packages</a>
           <a href="#support">Support</a>
           <a href="#contact">Contact</a>

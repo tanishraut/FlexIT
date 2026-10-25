@@ -12,4 +12,13 @@
     --light: #f7f8fb;
     --gray: #697386;
     --border: rgba(26, 31, 46, 0.10);
+
+    /* Portfolio Brand Color Tokens */
+    --midnight-navy: #11182B;
+    --electric-orange: #FF6B1A;
+    --coral: #F43F6B;
+    --golden-amber: #FFB81C;
+    --warm-ivory: #FFF7ED;
+    --slate: #475569;
 }
+
