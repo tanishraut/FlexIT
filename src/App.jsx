@@ -11,6 +11,7 @@ import SupportSection from "./components/sections/SupportSection";
 import CtaSection from "./components/sections/CtaSection";
 import ContactSection from "./components/sections/ContactSection";
 import KonkanTripCaseStudyPage from "./components/case-study/KonkanTripCaseStudyPage";
+import PrivacyPolicyPage from "./components/legal/PrivacyPolicyPage";
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,6 +27,14 @@ export default function App() {
       ) {
         return "/our-work/konkantrip-instagram-marketing";
       }
+      if (
+        path === "/privacy-policy" ||
+        path.endsWith("/privacy-policy") ||
+        hash === "#privacy-policy" ||
+        hash === "#/privacy-policy"
+      ) {
+        return "/privacy-policy";
+      }
     }
     return "/";
   });
@@ -36,25 +45,33 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleNavigateBack = (targetHash = "#work") => {
-    window.history.pushState(null, "", "/" + targetHash);
+  const handleOpenPrivacyPolicy = (route = "/privacy-policy") => {
+    window.history.pushState(null, "", route);
+    setCurrentRoute("/privacy-policy");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleNavigateBack = (targetHash = "#home") => {
+    window.history.pushState(null, "", "/" + (targetHash ? targetHash : ""));
     setCurrentRoute("/");
     setTimeout(() => {
-      if (targetHash) {
-        const target = document.getElementById(targetHash.replace("#", ""));
-        if (target) {
-          const navbarHeight =
-            document.querySelector(".navbar")?.offsetHeight ?? 0;
-          const targetPosition =
-            target.getBoundingClientRect().top +
-            window.scrollY -
-            navbarHeight -
-            16;
-          window.scrollTo({
-            top: Math.max(0, targetPosition),
-            behavior: "smooth",
-          });
-        }
+      if (targetHash === "#home" || !targetHash) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      const target = document.getElementById(targetHash.replace("#", ""));
+      if (target) {
+        const navbarHeight =
+          document.querySelector(".navbar")?.offsetHeight ?? 0;
+        const targetPosition =
+          target.getBoundingClientRect().top +
+          window.scrollY -
+          navbarHeight -
+          16;
+        window.scrollTo({
+          top: Math.max(0, targetPosition),
+          behavior: "smooth",
+        });
       }
     }, 60);
   };
@@ -71,6 +88,13 @@ export default function App() {
         hash === "#/our-work/konkantrip-instagram-marketing"
       ) {
         setCurrentRoute("/our-work/konkantrip-instagram-marketing");
+      } else if (
+        path === "/privacy-policy" ||
+        path.endsWith("/privacy-policy") ||
+        hash === "#privacy-policy" ||
+        hash === "#/privacy-policy"
+      ) {
+        setCurrentRoute("/privacy-policy");
       } else {
         setCurrentRoute("/");
       }
@@ -99,7 +123,17 @@ export default function App() {
         return;
       }
 
-      // If user is on dedicated case study page, route header navigation back to home anchor
+      // Intercept direct privacy policy links
+      const privacyLink = event.target.closest(
+        'a[href="/privacy-policy"], a[href="#privacy-policy"]',
+      );
+      if (privacyLink) {
+        event.preventDefault();
+        handleOpenPrivacyPolicy("/privacy-policy");
+        return;
+      }
+
+      // If user is on a dedicated page (not home), route header navigation back to home anchor
       if (currentRoute !== "/") {
         const homeLogoLink = event.target.closest('a[href="#home"], a.logo');
         if (homeLogoLink) {
@@ -110,10 +144,12 @@ export default function App() {
 
         const navAnchor = event.target.closest('a[href^="#"]');
         if (navAnchor) {
-          event.preventDefault();
           const targetId = navAnchor.getAttribute("href");
-          handleNavigateBack(targetId);
-          return;
+          if (targetId && !targetId.includes("privacy-policy")) {
+            event.preventDefault();
+            handleNavigateBack(targetId);
+            return;
+          }
         }
       }
 
@@ -234,7 +270,19 @@ export default function App() {
         <main>
           <KonkanTripCaseStudyPage onNavigateBack={handleNavigateBack} />
         </main>
-        <Footer />
+        <Footer onOpenPrivacyPolicy={handleOpenPrivacyPolicy} />
+      </>
+    );
+  }
+
+  if (currentRoute === "/privacy-policy") {
+    return (
+      <>
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <main>
+          <PrivacyPolicyPage onNavigateBack={handleNavigateBack} />
+        </main>
+        <Footer onOpenPrivacyPolicy={handleOpenPrivacyPolicy} />
       </>
     );
   }
@@ -255,7 +303,7 @@ export default function App() {
         <CtaSection />
         <ContactSection />
       </main>
-      <Footer />
+      <Footer onOpenPrivacyPolicy={handleOpenPrivacyPolicy} />
     </>
   );
 }

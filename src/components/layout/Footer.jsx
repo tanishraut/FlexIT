@@ -2,8 +2,15 @@ import React from "react";
 import logoTextWhite from "../../assets/images/logo-text-white.png";
 import { contactInfo } from "../../data/contactData";
 
-export default function Footer() {
+export default function Footer({ onOpenPrivacyPolicy }) {
   const currentYear = new Date().getFullYear();
+
+  const handlePrivacyClick = (event) => {
+    if (onOpenPrivacyPolicy) {
+      event.preventDefault();
+      onOpenPrivacyPolicy();
+    }
+  };
 
   return (
     <footer className="footer">
@@ -31,6 +38,12 @@ export default function Footer() {
           <a href="#pricing">Packages</a>
           <a href="#support">Support</a>
           <a href="#contact">Contact</a>
+          <a
+            href="/privacy-policy"
+            onClick={handlePrivacyClick}
+          >
+            Privacy Policy
+          </a>
         </div>
 
         <div className="footer-links">
@@ -60,6 +73,16 @@ export default function Footer() {
         <span id="copyright">
           © {currentYear} FLEXUS. All Rights Reserved.
         </span>
+
+        <div className="footer-bottom-links">
+          <a
+            href="/privacy-policy"
+            className="footer-bottom-link"
+            onClick={handlePrivacyClick}
+          >
+            Privacy Policy
+          </a>
+        </div>
 
         <span>Technology Consultancy</span>
       </div>

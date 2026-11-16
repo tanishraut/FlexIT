@@ -110,7 +110,30 @@
 
     justify-content: space-between;
 
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
     color: #777e8d;
 
     font-size: 11px;
+}
+
+.footer-bottom-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-bottom-link {
+    color: #969dab;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-bottom-link:hover {
+    color: var(--orange);
+    text-decoration: underline;
 }
